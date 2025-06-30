@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RandomWalkData" load_steps=2 format=3 uid="uid://cumaxtgdwu7ds"]
+
+[ext_resource type="Script" uid="uid://0gr4efa2nxe0" path="res://scripts/Data/simple_randomwalk_data.gd" id="1_w1yqy"]
+
+[resource]
+script = ExtResource("1_w1yqy")
+iterations = 100
+walkLength = 100
+startRandomly = true
+metadata/_custom_type_script = "uid://0gr4efa2nxe0"

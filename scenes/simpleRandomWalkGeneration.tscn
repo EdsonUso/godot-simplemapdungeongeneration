@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dthvmu81my76"]
+
+[ext_resource type="Script" uid="uid://fd5k5lkj4v0m" path="res://scripts/simpleRandomWalkDungeonGeneration.gd" id="1_ycqh3"]
+
+[node name="SimpleRandomWalkGeneration" type="Node2D"]
+script = ExtResource("1_ycqh3")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -101.0
+offset_top = -60.0
+offset_right = -1.0
+offset_bottom = -29.0
+text = "Gerar Mapa"
+
+[connection signal="pressed" from="Button" to="." method="runProceduralGeneration"]

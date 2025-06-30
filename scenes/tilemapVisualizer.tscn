@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2kn76ttna5rw"]
+
+[ext_resource type="Script" uid="uid://c0bfoqos8ksa4" path="res://scripts/tileMapVisualizer.gd" id="1_y7ljb"]
+
+[node name="TilemapVisualizer" type="Node2D"]
+script = ExtResource("1_y7ljb")
+id_fonte_tile_wall = null
+coordenadas_atlas_tile_wall = null
