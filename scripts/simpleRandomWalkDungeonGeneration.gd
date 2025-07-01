@@ -13,7 +13,7 @@ extends Node
 
 ## Limpa o mapa anterior, executa o algoritmo de geração e desenha o novo mapa de tiles.
 func runProceduralGeneration() -> void:
-	var floorPosition: Dictionary[Vector2i, bool] = runRandomWalk()
+	var floorPosition: Dictionary[Vector2i, bool] = runRandomWalk(random_walk_parameters, posicaoInicial)
 	var listfloorPositions = floorPosition.keys()
 	
 	if not is_instance_valid(tilemapVisualizer):
@@ -25,16 +25,16 @@ func runProceduralGeneration() -> void:
 
 ## Executa o algoritmo Simple Random Walk com base nos parâmetros definidos.
 ## Retorna um dicionário com as posições do chão geradas.
-func runRandomWalk() -> Dictionary[Vector2i, bool]:
-	var currentPosition: Vector2i = posicaoInicial
+func runRandomWalk(parameters: RandomWalkData, position: Vector2i) -> Dictionary[Vector2i, bool]:
+	var currentPosition: Vector2i = position
 	
 	var floorPosition: Dictionary[Vector2i, bool]
 	
-	for i in range(random_walk_parameters.iterations):
-		var path = ProceduralGeneration.simpleRandomWalk(currentPosition, random_walk_parameters.walkLength)
+	for i in range(parameters.iterations):
+		var path = ProceduralGeneration.simpleRandomWalk(currentPosition, parameters.walkLength)
 		floorPosition.merge(path, true)
 		
-		if random_walk_parameters.startRandomly:
+		if parameters.startRandomly:
 			var all_keys: Array[Vector2i] = floorPosition.keys()
 			
 			var random_index: int = randi() % all_keys.size()

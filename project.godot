@@ -18,6 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 ProceduralGeneration="*res://scripts/proceduralGenerationAlgo.gd"
+Set="*res://scripts/data_structures/GDSet.gd"
+Queue="*res://scripts/data_structures/GDQueue.gd"
+Boundsi="*res://scripts/data_structures/BoundsInt.gd"
 
 [editor_plugins]
 
